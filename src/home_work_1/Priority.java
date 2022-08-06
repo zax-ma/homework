@@ -113,6 +113,6 @@ public class Priority {
 
         //2.9 true && false
         System.out.println("true && false = "+String.valueOf(true && false));
-        // 1) оператор && принимает true, только в случае, если правая и левая часть возвращают одно значение: true или false
+        // 1) оператор && принимает true, только в случае, если правая и левая часть возвращают одинаковое значение: true или false
     }
 }
