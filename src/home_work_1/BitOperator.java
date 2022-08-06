@@ -16,7 +16,7 @@ public class BitOperator {
     1000100100
     &
     1100001001
-    -----------
+    ----------
     1000000000
      */
     System.out.println("Побитовый ИЛИ с двумя числами: "+Integer.toBinaryString(a|b));
@@ -24,7 +24,7 @@ public class BitOperator {
     1000100100
     |
     1100001001
-    -----------
+    ----------
     1100101101
          */
 }
