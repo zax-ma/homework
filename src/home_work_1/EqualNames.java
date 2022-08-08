@@ -9,7 +9,6 @@ public class EqualNames {
         String vasya = "Вася";
         String nastya = "Анастасия";
 
-        System.out.println(vasya);
         Scanner console = new Scanner(System.in);
         System.out.println("Введите Ваше имя:");
         String name = console.nextLine();
@@ -21,6 +20,7 @@ public class EqualNames {
 
         } else {
             System.out.println("Добрый день, а вы кто?");
+
         }
     }
 }
