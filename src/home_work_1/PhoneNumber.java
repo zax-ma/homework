@@ -8,7 +8,7 @@ public class PhoneNumber {
         Scanner console = new Scanner(System.in);
         char[] line = console.next().trim().toCharArray();
         if (line.length != 10) {
-            System.out.println("Проверьте корректность номера");
+            System.out.println("Проверьте корректность номера!");
         } else {
         String format = createPhoneNumber(line);
         System.out.println(format);
