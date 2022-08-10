@@ -7,19 +7,26 @@ public class Average {
         Scanner console = new Scanner(System.in);
 
         System.out.println("Введите первое число:");
-        double frstNum = console.nextDouble();
+        double a = console.nextDouble();
 
         System.out.println("Введите второе число:");
-        double scndNum = console.nextDouble();
+        double b = console.nextDouble();
 
         System.out.println("Введите третье число:");
-        double thrdNum = console.nextDouble();
-
-        double average = (frstNum + scndNum + thrdNum)/3.0;
-        if (average == (int) average) {
-            System.out.println("Среднее арифметическое: "+(int) average);
-        } else {
-            System.out.println("Среднее арифметическое: " + average);
-        }
+        double c = console.nextDouble();
+        double result = averageCalc(a, b, c);
+        System.out.println("Среднее из трех = "+result);
     }
+
+    private static double averageCalc(double x, double y, double z) {
+        double result = 0.0;
+        if ((x < y || x < z) && (x > y || x > z)) {
+            result = x;
+        }else if ((y < z || y < x) && (y > z || y > x)) {
+            result = y;
+        } else result = z;
+        return result;
+    }
+
 }
+
