@@ -1,4 +1,4 @@
-package home_work_2;
+package home_work_2.arrays;
 
 import java.util.Scanner;
 
@@ -54,12 +54,4 @@ public class NumFromConsole {
         return result;
     }
 }
-//Scanner in = new Scanner(System.in);
-//            String[] data = in.nextLine().split(" ");
-//            int[] numbers = new int[data.length];
-//            for (int i = 0; i < data.length; i++) {
-//                numbers[i] = Integer.parseInt(data[i]);
-//              //  System.out.println(numbers[i]);
-//            }
-//           // System.out.println(Arrays.toString(numbers));
-//        System.out.println(data.length);
+

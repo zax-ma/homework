@@ -1,6 +1,5 @@
-package home_work_2;
+package home_work_2.utils;
 
-import java.nio.IntBuffer;
 import java.util.Arrays;
 import java.util.Scanner;
 

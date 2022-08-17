@@ -1,4 +1,4 @@
-package home_work_2;
+package home_work_2.loop;
 
 /**
  * вводится число для вычисления факториала
