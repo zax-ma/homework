@@ -15,7 +15,7 @@ public class CalculatorWithCounterAutoAgregationInterfaceMain {
         CalculatorWithCounterAutoAgregationInterface calc1 = new CalculatorWithCounterAutoAgregationInterface(one);
         double result1 = calc1.addition((calc1.addition(4.1, calc1.multiplication(15, 7))), (calc1.power(calc1.division(28, 5), 2)));
         System.out.println("Результат CalculatorWithOperator : " + result1);
-        System.out.println("Результат подсчета количества использования калькулятора: " + calc1.getCountOperation());
+        System.out.println("Количество использования калькулятора: " + calc1.getCountOperation());
 
         CalculatorWithCounterAutoAgregationInterface calc2 = new CalculatorWithCounterAutoAgregationInterface(two);
         double result2 = calc2.addition((calc2.addition(4.1, calc2.multiplication(15, 7))), (calc2.power(calc2.division(28, 5), 2)));

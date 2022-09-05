@@ -10,9 +10,11 @@ public class CalculatorWithMathExtendsMain {
      */
     public static void main(String[] args) {
 
-        CalculatorWithMathExtends calc3 = new CalculatorWithMathExtends();
-
+        CalculatorWithMathExtends calc3 = new CalculatorWithMathExtends(); // сработает, если в методе firstCalc будет CalculatorWithOperator, тк этот калькулятор, тк он наследует методы класса CalculatorWithOperator (он про него знает)
         System.out.println("Результат калькулятора CalculatorWithMathExtends: " + firstCalc(calc3));
+
+        CalculatorWithOperator calc = new CalculatorWithOperator();
+        System.out.println(firstCalc(calc));
 
     }
 
