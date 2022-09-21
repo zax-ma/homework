@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RandomNameInterface implements IGenerator {
-    static int length = RandomAge.getRandomAge();
+    static int length = RandomNumInterface.getNumber(5, 10);
 
     public String getRandomString(){
         String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

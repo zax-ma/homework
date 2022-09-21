@@ -6,12 +6,19 @@ import java.util.Random;
 
 public class RandomNumInterface implements IGeneratorNum {
 
+    private static int number;
+
         public int getRandomAge(int min, int max){
             max -= min;
-            return (int) (Math.random()* ++max) + min;
+            number = (int) (Math.random()* ++max) + min;
+            return number;
         }
 
-        public String getRandomPassword(int min, int max){
+    public static int getNumber(int i, int i1) {
+        return number;
+    }
+
+    public String getRandomPassword(int min, int max){
             max -= min;
             String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             Random random = new Random();

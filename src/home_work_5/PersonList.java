@@ -69,7 +69,6 @@ public class PersonList extends Person {
         }
         String s = tslist.toString();
         return s;
-
     }
 
     public TreeSet getSort(ArrayList listarr){

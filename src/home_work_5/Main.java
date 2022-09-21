@@ -71,9 +71,9 @@ public class Main {
         System.out.println(humanRu);
 
         System.out.println("________String Name and Nick from File_________");
-        Person humanFile = new Person(being.getRandomNameFile("src/home_work_5/name.txt"),
+        Person humanFile = new Person(being.getRandomNameFile("src/home_work_5/files/name.txt"),
                 numeric.getRandomPassword(5, 10),
-                being.getRandomNameFile("src/home_work_5/nick.txt"));
+                being.getRandomNameFile("src/home_work_5/files/nick.txt"));
 
         System.out.println(humanFile);
 
@@ -94,9 +94,9 @@ public class Main {
 
         TreeSet<Person> people = new TreeSet<>();
         for (int j = 0; j < 4; j++) {
-            people.add(new Person(being.getRandomNameFile("src/home_work_5/name.txt"),
+            people.add(new Person(being.getRandomNameFile("src/home_work_5/files/name.txt"),
                     numeric.getRandomPassword(5, 10),
-                    being.getRandomNameFile("src/home_work_5/nick.txt")));
+                    being.getRandomNameFile("src/home_work_5/files/nick.txt")));
         }
 
         System.out.println(people);
@@ -105,9 +105,9 @@ public class Main {
 
         ArrayList<Person> objectList = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            objectList.add(new Person(being.getRandomNameFile("src/home_work_5/name.txt"),
+            objectList.add(new Person(being.getRandomNameFile("src/home_work_5/files/name.txt"),
                     numeric.getRandomPassword(5, 10),
-                    being.getRandomNameFile("src/home_work_5/nick.txt")));
+                    being.getRandomNameFile("src/home_work_5/files/nick.txt")));
         }
         System.out.println("Before sorting:_____ ");
         for (Person person : objectList) {
@@ -127,7 +127,7 @@ public class Main {
 
         ArrayList<Animal> anlist = new ArrayList<>();
         for (int j = 0; j < 3; j++) {
-            anlist.add(new Animal(numeric.getRandomAge(1, 15), being.getRandomNameFile("src/home_work_5/petname.txt")));
+            anlist.add(new Animal(numeric.getRandomAge(1, 15), being.getRandomNameFile("src/home_work_5/files/petname.txt")));
         }
         for (Animal animal : anlist) {
             System.out.println(animal.getAge() + " " + animal.getNick());
