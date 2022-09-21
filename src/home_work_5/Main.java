@@ -22,7 +22,7 @@ public class Main {
                 being.getRandomString());
         System.out.println("\n________ArrayList__________\n");
         long start1 = System.currentTimeMillis();
-        System.out.println(p.ArrListPerson(100_000));
+        System.out.println(p.ArrListPerson(5));
         long stop1 = System.currentTimeMillis();
         System.out.println("\n________LinkedList__________\n");
         long start2 = System.currentTimeMillis();
@@ -135,6 +135,7 @@ public class Main {
         Collections.sort(anlist, new AnimalAgeComparator().thenComparing(new AnimalNickComparator()));
 
         System.out.println(anlist);
+        
 
     }
 

@@ -6,17 +6,17 @@ import java.util.Random;
 
 public class RandomNumInterface implements IGeneratorNum {
 
-    private static int number;
-
-        public int getRandomAge(int min, int max){
-            max -= min;
-            number = (int) (Math.random()* ++max) + min;
-            return number;
-        }
-
-    public static int getNumber(int i, int i1) {
-        return number;
+    public static int getRandomString(){
+        int num = 100 - 10;
+        return (int) (Math.random()* num)-10;
     }
+
+
+    public int getRandomAge(int min, int max){
+            max -= min;
+
+            return (int) (Math.random()* ++max) + min;
+        }
 
     public String getRandomPassword(int min, int max){
             max -= min;
