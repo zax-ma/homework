@@ -4,4 +4,6 @@ public interface IGeneratorNum {
     int getRandomAge(int min, int max);
 
     String getRandomPassword(int min, int max);
+
+
 }

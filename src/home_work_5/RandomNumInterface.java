@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomNumInterface implements IGeneratorNum {
 
-    public static int getRandomString(){
+    public static int getRandomStringLength(){
         int num = 100 - 10;
         return (int) (Math.random()* num)-10;
     }

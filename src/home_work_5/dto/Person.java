@@ -1,9 +1,13 @@
 package home_work_5.dto;
 
+import home_work_5.PersonList;
+
 public class Person implements Comparable<Person>{
     private String nick;
     private String password;
     private String name;
+
+
 
 
 
@@ -12,6 +16,9 @@ public class Person implements Comparable<Person>{
         this.password = password;
         this.name = name;
     }
+
+
+
 
     public String getNick() {
         return nick;
@@ -50,7 +57,7 @@ public class Person implements Comparable<Person>{
         else
             builder.append("{name: " + getName() + ", " +
                     "password: " + getPassword() + ", " +
-                    "nick: " + getNick() + "}");
+                    "nick: " + getNick() + "}" +"\n");
         if(builder.isEmpty())
             builder.append("]");
         return builder.toString();

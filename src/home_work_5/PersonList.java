@@ -1,11 +1,15 @@
 package home_work_5;
 
 
+import home_work_3.calcs.api.ICalculator;
+import home_work_5.api.IGenerator;
 import home_work_5.dto.Person;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 public class PersonList extends Person {
+    int count;
     RandomNameInterface being = new RandomNameInterface();
     RandomNumInterface num = new RandomNumInterface();
     List<Person> listarr = new ArrayList<>();
@@ -22,9 +26,12 @@ public class PersonList extends Person {
 
     public String ArrListPerson(int count) {
 
+        listarr.add(PersonList.this);
+
         for (int i = 0; i < count; i++) {
-            listarr.add(new Person(being.getRandomRU(),
-                    num.getRandomPassword(5, 10),
+            listarr.add(new Person(
+                    being.getRandomName(),
+                    num.getRandomPassword(5,10),
                     being.getRandomString()));
 
         }
@@ -36,7 +43,8 @@ public class PersonList extends Person {
     public String LinkedListPerson(int count) {
 
         for (int i = 0; i < count; i++) {
-            lnklist.add(new Person(being.getRandomRU(),
+            lnklist.add(new Person(
+                    being.getRandomRU(),
                     num.getRandomPassword(5, 10),
                     being.getRandomString()));
 
@@ -49,7 +57,8 @@ public class PersonList extends Person {
     public String HashSetPerson(int count) {
 
         for (int i = 0; i < count; i++) {
-            hslist.add(new Person(being.getRandomRU(),
+            hslist.add(new Person(
+                    being.getRandomRU(),
                     num.getRandomPassword(5, 10),
                     being.getRandomString()));
 
@@ -62,7 +71,8 @@ public class PersonList extends Person {
     public String TreeSetPerson(int count) {
 
         for (int i = 0; i < count; i++) {
-            tslist.add(new Person(being.getRandomRU(),
+            tslist.add(new Person(
+                    being.getRandomRU(),
                     num.getRandomPassword(5, 10),
                     being.getRandomString()));
 
@@ -75,7 +85,6 @@ public class PersonList extends Person {
             TreeSet set = new TreeSet(listarr);
             return set;
         }
-
 
 
 }
