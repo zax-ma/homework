@@ -1,4 +1,4 @@
-package warandpeace;
+package warandpeace.filereaders;
 
 import warandpeace.api.IReadFile;
 
@@ -12,16 +12,23 @@ import java.nio.file.Paths;
 public class ReadFileToString implements IReadFile {
     private String contents;
 
+    /**
+     * Чтение файла и преобразование в строку
+     * @param file путь и имя файла
+     * @return текст из файла, преобразованный в строку
+     */
     @Override
     public String readFile(String file) {
 
         Path path = Paths.get(file);
+
         try {
-            contents = Files.readString(path, StandardCharsets.UTF_8);
+         contents = Files.readString(path, StandardCharsets.UTF_8);
+
         }catch(FileNotFoundException f){
-            System.out.println("Ошибка. Файл не найден."); //throw new
+            System.out.println("Ошибка. Файл не найден.");
         } catch(IOException e){
-            System.out.println("Ошибка чтения файла."); //использовать string builder
+            System.out.println("Ошибка чтения файла.");
         }
         return contents;
     }

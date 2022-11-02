@@ -2,8 +2,11 @@ package warandpeace.decorators;
 
 import warandpeace.api.ISearchEngine;
 
-public class SearchEngineNormalizer implements ISearchEngine {
+/**
+ * Класс для приведения всех слов в тексте к нижнему регистру
+ */
 
+public class SearchEngineNormalizer implements ISearchEngine {
 
     ISearchEngine normalizer;
 

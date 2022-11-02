@@ -23,6 +23,7 @@ public class EasySearch implements ISearchEngine {
      * @return сколько раз в тексте встречается искомое слово
      */
     public long search(String text, String word) {
+
         name = word;
         if (word == "") {
             try {
@@ -87,14 +88,13 @@ public class EasySearch implements ISearchEngine {
                     }
                 }
             }
-
+            //подсчет количетва раз, когда слово встретилось в тексте
             if (count % wordLength != 0) {
                 while (count % wordLength != 0) {
                     count--;
                 }
 
             }
-
 
         }
         return wordCounter = count / wordLength;

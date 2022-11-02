@@ -1,58 +1,63 @@
 package warandpeace;
 
+import warandpeace.api.IReadFile;
 import warandpeace.api.ISearchEngine;
-import warandpeace.counters.MapFromString;
-import warandpeace.counters.SetFromString;
-import warandpeace.decorators.SearchEnginePunctuationNormalizer;
+import warandpeace.dto.Book;
+import warandpeace.filereaders.ReadFileFromConsole;
+import warandpeace.filereaders.ReadFileToString;
+import warandpeace.filereaders.WriteResultToFile;
 import warandpeace.searchers.EasySearch;
 
-import static warandpeace.sorters.MapSort.sortMapByValue;
+import java.util.Scanner;
 
 public class WarAndPeaceMain {
 
+    public static void main(String[] args) throws Exception {
 
 
-    public static void main(String[] args) {
-        ReadFileToString file = new ReadFileToString();
-        Book WarAndPeace = new Book(file.readFile("src/warandpeace/Nekrasov.txt"));
-        System.out.println(WarAndPeace);
+        IReadFile fileToRead = new ReadFileToString();
+        ISearchEngine easySearch = new EasySearch();
 
-      /*  SetFromString words = new SetFromString();
-        System.out.println("Количество уникальных использованных слов в тексте: " + words.uniqueWordsCounter());
-           System.out.println(words.getWords());
-        System.out.println(MapFromString.allWordsCounter());
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(sortMapByValue());*/
+        Book book = null;
 
-       ISearchEngine easySearch = new EasySearch();
-        easySearch.search(Book.getBookFile(), "бабушка");
-        System.out.println(easySearch);
+        ReadFileFromConsole reader = new ReadFileFromConsole();
+        String path;
+        do {
 
-       /* ISearchEngine regSearch = new RegExSearch();
-        regSearch.search(Book.getBookFile(), "и");
-        System.out.println(regSearch);
-*/
+            System.out.println("Введите адрес папки с книгами: ");
+            path = scanner.nextLine();
+            reader.readFile(path);
+            String name;
+            do {
+                name = null;
 
-        ISearchEngine normbook = new SearchEnginePunctuationNormalizer(new EasySearch());
-        normbook.search(Book.getBookFile(), "и");
-        System.out.println(normbook);
+                    System.out.println("Введите имя файла для поиска: ");
+                    name = scanner.nextLine();
+                    reader.readName(path, name);
+                    book = new Book(path, name);
 
-       /*ISearchEngine normbookreg = new SearchEnginePunctuationNormalizer(new RegExSearch());
-        normbookreg.search(Book.getBookFile(),"и");
-        System.out.println(normbookreg);*/
+//do
 
-        /*ISearchEngine nocasenorm = new SearchEngineNormalizer(new EasySearch());
-        nocasenorm.search(Book.getBookFile(),"В");
-        System.out.println(nocasenorm);
-*/
-       /* ISearchEngine nocasenormreg = new SearchEngineNormalizer(new RegExSearch());
-        nocasenormreg.search(Book.getBookFile(),"В");
-        System.out.println(nocasenormreg);*/
+                String wordToSearch;
+                do {
 
-       /* ISearchEngine norm = new SearchEngineNormalizer(new EasySearch());
-        norm.search(Book.getBookFile(),"И");
-        System.out.println(norm);*/
+                    System.out.println("Введите слово для поиска: ");
+                    wordToSearch = scanner.nextLine();
 
+                    ReadFileToString file = new ReadFileToString();
+                    String content = file.readFile(Book.getBookPathName());
+
+                    ISearchEngine searchWord = new EasySearch();
+                    searchWord.search(content, wordToSearch);
+
+                    WriteResultToFile.createResult(book, searchWord);
+                } while (!wordToSearch.equals("back"));
+            } while (!name.equals("exit"));
+
+        } while (!path.equals("exit"));
+    }
 
     }
-}
+

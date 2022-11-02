@@ -12,6 +12,12 @@ public class RegExSearch implements ISearchEngine {
 
     public static String name;
 
+    /**
+     * Метод поиска с помощью регулярных выражени
+     * @param text текств, в котором ищем
+     * @param word слово, которое ищем
+     * @return количество раз, которое встречается искомое слово
+     */
     @Override
     public long search(String text, String word) {
         name = word;
@@ -36,8 +42,10 @@ public class RegExSearch implements ISearchEngine {
         return wordCounter;
     }
 
-
-
+    /**
+     * Билдер, преобразование данныех в строковое представление
+     * @return слово - количество раз, которое встречается в тексте
+     */
     @Override
     public String toString() {
         return

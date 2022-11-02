@@ -1,6 +1,6 @@
 package warandpeace.counters;
 
-import warandpeace.Book;
+import warandpeace.dto.Book;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ public class SetFromString {
 
     private static int count;
 
-    private String linesToSplit = Book.getBookFile();
+    private String linesToSplit = Book.getBookPathName();
 
     private Set<String> words = new HashSet<>(Arrays.asList(linesToSplit
             .replaceAll("\\s*(\\s|,|!|:|;|-|—|--|»|«|\\?|\\(|\\)|\\]|\\[|\\.)\\s*", " ")
@@ -20,6 +20,10 @@ public class SetFromString {
         return words;
     }
 
+    /**
+     * Метод дял подсчета уникальных слов, использованных в тексте
+     * @return количество
+     */
     public int uniqueWordsCounter(){
 
         for (String item: words) {

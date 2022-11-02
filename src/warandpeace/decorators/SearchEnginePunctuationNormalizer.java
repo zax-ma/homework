@@ -2,6 +2,10 @@ package warandpeace.decorators;
 
 import warandpeace.api.ISearchEngine;
 
+/**
+ * Класс для удаления пунктуации и лишних знаков + лишних пробелов в тексте
+ */
+
 public class SearchEnginePunctuationNormalizer implements ISearchEngine {
 
     private String normalText;
@@ -11,6 +15,11 @@ public class SearchEnginePunctuationNormalizer implements ISearchEngine {
         this.normalizer = normalizer;
     }
 
+    /**
+     * Метод, заменяющий все не буквенно-числовые символы на ""
+     * @param text принимает входным параметром текст
+     * @return нормализованный текст
+     */
     public String normal(String text) {
         normalText = text.replaceAll("^\\w|^\\d|\\n", "");
         return normalText;
